@@ -1,0 +1,10 @@
+{
+  "id": "desktop-electron",
+  "name": "Desktop operations tool with Electron",
+  "targets": ["macos", "windows", "linux"],
+  "stack": ["Electron", "Vite", "Vue", "TypeScript", "Tailwind CSS"],
+  "allowed": ["electron", "vite", "vue", "typescript", "tailwindcss", "@supabase/supabase-js"],
+  "forbidden": ["nuxt", "@nuxt/ui", "@mpxjs/core", "mpx", "mpx-cube-ui", "unocss", "@capacitor/core"],
+  "backend": { "local": "SupaCloud Lite", "production": "SupaCloud", "client": "@supabase/supabase-js through a renderer-safe service layer" },
+  "verification": ["typecheck", "renderer build", "main-process smoke test", "preload IPC boundary test", "packaging check"]
+}

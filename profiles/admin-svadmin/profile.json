@@ -1,0 +1,10 @@
+{
+  "id": "admin-svadmin",
+  "name": "Internal backoffice with svadmin",
+  "targets": ["admin", "backoffice", "operations"],
+  "stack": ["svadmin", "Svelte", "TypeScript", "SupaCloud adapter"],
+  "allowed": ["@svadmin/core", "@svadmin/ui", "@svadmin/supabase", "svelte", "typescript"],
+  "forbidden": ["nuxt", "@nuxt/ui", "@mpxjs/core", "mpx", "mpx-cube-ui", "electron", "@capacitor/core"],
+  "backend": { "local": "SupaCloud Lite", "production": "SupaCloud with SupaOAuth when organization governance is required", "client": "@svadmin/supabase" },
+  "verification": ["typecheck", "build", "role and RLS test", "admin browser smoke test"]
+}

@@ -1,0 +1,10 @@
+{
+  "id": "web-nuxt",
+  "name": "Public web with Nuxt",
+  "targets": ["web", "ssr", "seo"],
+  "stack": ["Nuxt", "Vue", "TypeScript", "Tailwind CSS", "Nuxt UI"],
+  "allowed": ["nuxt", "vue", "typescript", "tailwindcss", "@nuxt/ui", "@supabase/supabase-js"],
+  "forbidden": ["@mpxjs/core", "mpx", "mpx-cube-ui", "unocss", "electron", "@capacitor/core"],
+  "backend": { "local": "SupaCloud Lite", "production": "SupaCloud", "client": "@supabase/supabase-js" },
+  "verification": ["typecheck", "build", "browser smoke test", "SSR route check"]
+}

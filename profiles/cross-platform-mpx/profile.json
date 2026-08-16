@@ -1,0 +1,10 @@
+{
+  "id": "cross-platform-mpx",
+  "name": "Mini-program, H5, and React Native with Mpx",
+  "targets": ["wechat-mini-program", "h5", "ios", "android"],
+  "stack": ["Mpx", "Mpx2RN", "TypeScript", "UnoCSS", "mpx-cube-ui", "supabase-mp-js"],
+  "allowed": ["@mpxjs/core", "mpx", "typescript", "unocss", "mpx-cube-ui", "supabase-mp-js"],
+  "forbidden": ["nuxt", "@nuxt/ui", "tailwindcss", "electron", "@capacitor/core", "@supabase/supabase-js"],
+  "backend": { "local": "SupaCloud Lite", "production": "SupaCloud", "client": "supabase-mp-js" },
+  "verification": ["typecheck", "mini-program build", "H5 build", "React Native build", "platform smoke tests"]
+}
