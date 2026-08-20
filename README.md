@@ -23,13 +23,18 @@ This repository is not a collection of product Skills. Individual products own t
 
 All profiles use SupaCloud Lite for local work where applicable and the full SupaCloud platform for managed production infrastructure.
 
+### Optional capabilities
+
+Capabilities add cross-cutting constraints without becoming a second application profile. [`backend-supacloud`](./capabilities/backend-supacloud/) defines the architecture, security, migration, Function, worker, and verification rules for applications that use SupaCloud background tasks, Queues, Durable Workflows, transactional commands, immutable artifacts, or trusted management APIs.
+
 ### Use with an AI coding agent
 
 1. Select exactly one primary profile for each app.
-2. Give the agent [`AGENTS.md`](./AGENTS.md) and the selected `profile.json` before it edits code.
-3. The agent must not introduce packages listed in `forbidden` without an explicit profile change.
-4. Share contracts, types, API boundaries, and design tokens across apps. Do not force UI components across different rendering platforms.
-5. Run `npm run check` after changing a profile.
+2. Add only the capabilities the application actually adopts, such as `backend-supacloud`.
+3. Give the agent [`AGENTS.md`](./AGENTS.md), the selected `profile.json`, and selected capability documents before it edits code.
+4. The agent must not introduce packages listed in `forbidden` without an explicit profile change.
+5. Share contracts, types, API boundaries, and design tokens across apps. Do not force UI components across different rendering platforms.
+6. Run `npm run check` after changing a profile or capability.
 
 ### Repository layout
 
@@ -37,7 +42,10 @@ All profiles use SupaCloud Lite for local work where applicable and the full Sup
 AGENTS.md                         # Instructions for coding agents
 profiles/<id>/profile.json        # Machine-readable stack contract
 profiles/<id>/README.md           # Human-readable rationale and operating rules
+capabilities/<id>/capability.json # Machine-readable additive capability contract
+capabilities/<id>/README.md       # Human-readable capability rules
 schemas/stack-profile.schema.json # Contract shape
+schemas/stack-capability.schema.json # Capability contract shape
 scripts/check-profiles.mjs        # Dependency-free consistency check
 ```
 
@@ -62,13 +70,18 @@ scripts/check-profiles.mjs        # Dependency-free consistency check
 
 各 Profile 在适用时使用 SupaCloud Lite 进行本地开发，并使用完整 SupaCloud 平台承载受管生产基础设施。
 
+### 可选能力
+
+Capability 用于补充跨领域约束，不是第二个应用 Profile。[`backend-supacloud`](./capabilities/backend-supacloud/) 为使用 SupaCloud 后台任务、队列、Durable Workflow、事务命令回执、不可变制品或可信管理 API 的应用定义架构、安全、迁移、Function、Worker 和验证规则。
+
 ### 与 AI 编程 Agent 配合
 
 1. 每个应用只能选择一个主 Profile。
-2. Agent 修改代码前，先提供根目录 [`AGENTS.md`](./AGENTS.md) 和对应的 `profile.json`。
-3. 未经明确修改 Profile，Agent 不得引入 `forbidden` 中的依赖。
-4. 跨应用共享契约、类型、API 边界和设计令牌，不强行共享不同渲染平台的 UI 组件。
-5. 修改 Profile 后运行 `npm run check`。
+2. 只为应用实际采用的能力添加 Capability，例如 `backend-supacloud`。
+3. Agent 修改代码前，先提供根目录 [`AGENTS.md`](./AGENTS.md)、对应的 `profile.json` 和已选择的 Capability 文档。
+4. 未经明确修改 Profile，Agent 不得引入 `forbidden` 中的依赖。
+5. 跨应用共享契约、类型、API 边界和设计令牌，不强行共享不同渲染平台的 UI 组件。
+6. 修改 Profile 或 Capability 后运行 `npm run check`。
 
 ## License
 

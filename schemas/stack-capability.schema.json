@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "VibeUnion Stack Capability",
+  "type": "object",
+  "required": ["id", "name", "appliesTo", "allowed", "rules", "verification"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+    "name": { "type": "string" },
+    "appliesTo": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": { "type": "string", "pattern": "^[a-z0-9-]+$" }
+    },
+    "allowed": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+    "rules": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+    "verification": { "type": "array", "minItems": 1, "items": { "type": "string" } }
+  }
+}

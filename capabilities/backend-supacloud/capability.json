@@ -1,0 +1,19 @@
+{
+  "id": "backend-supacloud",
+  "name": "SupaCloud application backend",
+  "appliesTo": ["web-nuxt", "cross-platform-mpx", "desktop-electron", "admin-svadmin"],
+  "allowed": ["@supabase/supabase-js", "@supacloud/js"],
+  "rules": [
+    "Use @supabase/supabase-js for user-scoped Auth, Database, Storage, Realtime, and standard Edge Function invokes.",
+    "Use @supacloud/js only in trusted server-side code for platform task, queue, workflow, command, artifact, OAuth/OIDC, or SupAuth operations.",
+    "Keep database migrations append-only. A schemas/ directory may organize current authored SQL but does not replace reviewed migrations.",
+    "Use one authoritative Supabase-compatible deployment root per application: supabase/ or an established supacloud/ root, never both.",
+    "Keep Edge Function entrypoints thin. Reserve functions/_shared for technical cross-cutting code and keep domain services with their owning API, worker, webhook, or scheduled Function.",
+    "For durable side effects, write the accepted domain change and outbox or command intent in one transaction, then dispatch from a trusted worker.",
+    "Do not expose service_role, Management API tokens, tenant database credentials, or webhook secrets to browser or mobile clients.",
+    "Treat workflow, command, and artifact ledgers as execution and audit mechanisms; application domain tables remain authoritative for business state."
+  ],
+  "verification": [
+    "migration dry-run", "function build", "contract test", "RLS or API authorization test", "affected browser or runtime smoke test"
+  ]
+}
