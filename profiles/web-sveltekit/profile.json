@@ -1,0 +1,32 @@
+{
+  "id": "web-sveltekit",
+  "name": "Public web with SvelteKit",
+  "targets": ["web", "ssr", "seo", "customer-portal"],
+  "stack": ["SvelteKit", "Svelte 5", "TypeScript", "Tailwind CSS", "SupaCloud client"],
+  "allowed": [
+    "@sveltejs/adapter-cloudflare",
+    "@sveltejs/kit",
+    "@supabase/supabase-js",
+    "lucide-svelte",
+    "svelte",
+    "tailwindcss",
+    "typescript"
+  ],
+  "forbidden": [
+    "@capacitor/core",
+    "@mpxjs/core",
+    "@nuxt/ui",
+    "electron",
+    "mpx",
+    "nuxt",
+    "unocss",
+    "vue"
+  ],
+  "backend": {
+    "local": "SupaCloud Lite",
+    "production": "SupaCloud",
+    "client": "@supabase/supabase-js",
+    "server": "Elysia / @supacloud/elysia"
+  },
+  "verification": ["typecheck", "build", "browser smoke test", "SSR route check"]
+}

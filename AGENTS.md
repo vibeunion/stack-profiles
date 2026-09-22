@@ -15,6 +15,8 @@ Before editing an application, select one primary profile under `profiles/` and 
 ## Selection rules
 
 - Use `web-nuxt` for browser-first public web experiences, SEO, and SSR.
+- Use `web-sveltekit` for browser-first public web experiences, SEO, SSR, and customer portals built with SvelteKit.
+- Keep Elysia / `@supacloud/elysia` as the backend runtime for VibeUnion applications; SvelteKit server routes must remain thin SSR or BFF boundaries.
 - Use `cross-platform-mpx` for one public business client that targets mini-program, H5, and React Native.
 - Use `desktop-electron` only when desktop capabilities such as files, multiple windows, tray controls, or long-running local work are required.
 - Use `admin-svadmin` for internal CRUD, RBAC, audit, and operations work. Do not rebuild the same backoffice in a public-app profile.

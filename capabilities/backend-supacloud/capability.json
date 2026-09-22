@@ -1,8 +1,15 @@
 {
   "id": "backend-supacloud",
   "name": "SupaCloud application backend",
-  "appliesTo": ["web-nuxt", "cross-platform-mpx", "desktop-electron", "admin-svadmin"],
-  "allowed": ["@supabase/supabase-js", "@supacloud/js"],
+  "appliesTo": ["web-nuxt", "web-sveltekit", "cross-platform-mpx", "desktop-electron", "admin-svadmin"],
+  "allowed": [
+    "@supabase/supabase-js",
+    "@supacloud/app",
+    "@supacloud/compiler",
+    "@supacloud/elysia",
+    "@supacloud/js",
+    "elysia"
+  ],
   "rules": [
     "Use @supabase/supabase-js for user-scoped Auth, Database, Storage, Realtime, and standard Edge Function invokes.",
     "Use @supacloud/js only in trusted server-side code for platform task, queue, workflow, command, artifact, OAuth/OIDC, or SupAuth operations.",

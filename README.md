@@ -17,6 +17,7 @@ This repository is not a collection of product Skills. Individual products own t
 | Application surface | Profile | Fixed stack |
 | --- | --- | --- |
 | Public web, SEO, content, customer portal | [`web-nuxt`](./profiles/web-nuxt/) | Nuxt, Vue, TypeScript, Tailwind CSS, Nuxt UI |
+| Public web, SEO, content, customer portal | [`web-sveltekit`](./profiles/web-sveltekit/) | SvelteKit, Svelte 5, TypeScript, Tailwind CSS |
 | WeChat mini-program, H5, iOS, Android | [`cross-platform-mpx`](./profiles/cross-platform-mpx/) | Mpx, Mpx2RN, TypeScript, UnoCSS, mpx-cube-ui, supabase-mp-js |
 | Operator desktop tool | [`desktop-electron`](./profiles/desktop-electron/) | Electron, Vite, Vue, TypeScript, Tailwind CSS |
 | Internal operations and backoffice | [`admin-svadmin`](./profiles/admin-svadmin/) | svadmin, Svelte, TypeScript, SupaCloud adapter |
@@ -64,6 +65,7 @@ scripts/check-profiles.mjs        # Dependency-free consistency check
 | 应用端 | Profile | 固定技术栈 |
 | --- | --- | --- |
 | 官网、SEO、内容页、用户门户 | [`web-nuxt`](./profiles/web-nuxt/) | Nuxt、Vue、TypeScript、Tailwind CSS、Nuxt UI |
+| 官网、SEO、内容页、用户门户 | [`web-sveltekit`](./profiles/web-sveltekit/) | SvelteKit、Svelte 5、TypeScript、Tailwind CSS |
 | 微信小程序、H5、iOS、Android | [`cross-platform-mpx`](./profiles/cross-platform-mpx/) | Mpx、Mpx2RN、TypeScript、UnoCSS、mpx-cube-ui、supabase-mp-js |
 | 运营桌面工具 | [`desktop-electron`](./profiles/desktop-electron/) | Electron、Vite、Vue、TypeScript、Tailwind CSS |
 | 内部运营与后台 | [`admin-svadmin`](./profiles/admin-svadmin/) | svadmin、Svelte、TypeScript、SupaCloud 适配器 |

@@ -6,11 +6,16 @@ It is an optional backend capability, not a primary application profile. Select 
 
 ```json
 {
-  "primaryProfile": "admin-svadmin",
+  "primaryProfile": "web-sveltekit",
   "capabilities": ["backend-supacloud"]
 }
 ```
 
 The capability defines portable architecture and security boundaries. Product-specific directory names, business domains, state machines, data retention, and deployment targets remain in the application repository.
+
+For a public SvelteKit application, this capability keeps the backend boundary
+explicit: SvelteKit owns the browser/SSR surface, while Bun + Elysia /
+`@supacloud/elysia` owns domain APIs, workers, orchestration, and durable
+side effects.
 
 For detailed platform contracts, consult the SupaCloud documentation for Background Functions, Durable Workflows, and Application Platform Primitives.
